@@ -1,5 +1,8 @@
 <h1>Review #<%= @review.id %></h1>
 
+
+<p><% the_movie = Movie.find_by(id: @review.movie_id) %>
+  <b>Movie Title:</b> <%= the_movie.title %></p>
 <p>
   <b>Review:</b>
   <%= @review.review %>

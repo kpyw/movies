@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Movie Title</th>
-      <th>Review</th>
       <th>Rating</th>
       <th></th>
       <th></th>
@@ -20,7 +19,6 @@
     <tr>
       <% the_movie = Movie.find_by(id: review.movie_id) %>
       <td><%= the_movie.title %></td>
-      <td><%= review.review %></td>
       <td><%= review.rating %></td>
 
       <td><%= link_to 'Show', review_url(review) %></td>
