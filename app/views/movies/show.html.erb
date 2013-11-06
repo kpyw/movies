@@ -1,5 +1,13 @@
 <h1>Movie #<%= @movie.id %></h1>
 
+<% avg_rating = Review.where(movie_id: @movie.id).average(:rating).to_i %>
+
+<p>
+  User rating: <%= ("&#9733;" * avg_rating + "&#9734;" * (10 - avg_rating)).html_safe %>
+  based on
+  <%= link_to "#{pluralize(Review.where(movie_id: @movie.id).count, 'review')}", '#reviews' %>
+</p>
+
 <p>
   <b>Title:</b>
   <%= @movie.title %>
