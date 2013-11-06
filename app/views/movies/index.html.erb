@@ -20,7 +20,7 @@
     <tr>
       <td><%= movie.title %></td>
       <td><%= movie.year %></td>
-      <td><%= rating=Review.where(movie_id: movie.id).average(:rating).to_i %></td>
+      <td><%= rating = Review.where(movie_id: movie.id).average(:rating).to_i %></td>
       <td><%= link_to 'Rate', new_review_url(movie) %></td>
       <td><%= link_to 'Show', movie_url(movie) %></td>
       <td><%= link_to 'Edit', edit_movie_url(movie) %></td>
